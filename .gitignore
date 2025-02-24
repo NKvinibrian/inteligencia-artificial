@@ -1,0 +1,53 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição / pacotes
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Diretórios criados pelo ambiente virtual
+venv/
+ENV/
+env/
+.venv/
+*.env
+
+# Arquivos de configuração do IDE e sistemas operacionais
+*.swp
+.idea/
+.vscode/
+*.DS_Store
+
+# Arquivos de log
+*.log
+
+# Testes temporários e dados de execução
+.tox/
+.cache/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+nosetests.xml
+coverage.xml
+*.coveragerc
+
+# Arquivos PyCharm
+*.iml
+out/
+
+# Arquivos de configuração (uso responsável)
+*.env
+.env.*
+
+# Jupyter Notebooks indigesto temporário
+.ipynb_checkpoints
+
+# Configurações locais específicas da máquina
+*.config
+*.local
