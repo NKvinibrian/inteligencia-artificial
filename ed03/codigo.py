@@ -54,8 +54,22 @@ def read_tsp(file_path):
     elif ext == '.csv':
         with open(file_path, newline='') as f:
             reader = csv.reader(f)
-            header = next(reader, None)
-            for row in reader:
+            first_row = next(reader, None)
+            if first_row is None:
+                raise ValueError(f"Arquivo CSV vazio: {file_path}")
+
+            # Detecta se a primeira linha é cabeçalho analisando se os dois
+            # primeiros campos são números. Caso contrário, assume-se cabeçalho.
+            try:
+                float(first_row[0])
+                if len(first_row) > 1:
+                    float(first_row[1])
+                is_header = False
+            except ValueError:
+                is_header = True
+
+            rows = reader if is_header else [first_row] + list(reader)
+            for row in rows:
                 if not row:
                     continue
                 # Se houver 3 colunas: id, x, y
